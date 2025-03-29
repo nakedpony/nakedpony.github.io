@@ -187,4 +187,30 @@
 				}
 			});
 
+$('#subscribe-form').submit(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            url: 'https://buttondown.com/api/emails/embed-subscribe/shinydev',
+            type: 'POST',
+            dataType: 'html',
+            data: {
+                email: $('#email').val()
+            },
+            success: function() {
+                $('#form-message')
+                    .text('🎉 Thanks for subscribing! Check your inbox.')
+                    .css({'color':'#166534', 'background-color':'#dcfce7', 'padding':'10px', 'border-radius':'5px'})
+                    .fadeIn();
+                $('#subscribe-form')[0].reset();
+            },
+            error: function() {
+                $('#form-message')
+                    .text('⚠️ Oops, something went wrong. Please try again.')
+                    .css({'color':'#991b1b', 'background-color':'#fee2e2', 'padding':'10px', 'border-radius':'5px'})
+                    .fadeIn();
+            }
+        });
+    });
+
 })(jQuery);
