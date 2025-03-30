@@ -291,6 +291,33 @@ input, select, textarea {
 		padding: 0.25em 0.65em;
 	}
 
+
+	.message {
+		background: rgba(255, 255, 255, 0.25);
+		border-radius: 0.35em;
+		border: solid 1px rgba(255, 255, 255, 0.35);
+		font-size: 12pt;
+		color: #ffffff;
+		padding: 0.85em 0.85em;
+	}
+
+	.error {
+		background: #b74e91 !important;
+	}
+
+	.none {
+	    display: none
+	}
+
+	.video-container {
+        	max-width: 100%; /* Set a pixel value instead if no parent container*/
+        	margin: 0 auto; /* Center the container */
+    	}
+    .video-container video {
+        	width: 100%; /* Fill the available width */
+        	height: auto; /* Adjust height automatically */
+    }
+
 	pre {
 		-webkit-overflow-scrolling: touch;
 		font-family: "Courier New", monospace;

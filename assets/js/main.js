@@ -200,14 +200,16 @@ $('#subscribe-form').submit(function(e){
             success: function() {
                 $('#form-message')
                     .text('🎉 Thanks for subscribing! Check your inbox.')
-                    .css({'color':'#166534', 'background-color':'#dcfce7', 'padding':'10px', 'border-radius':'5px'})
+                    .removeClass('none')
+                    .removeClass('error')
                     .fadeIn();
                 $('#subscribe-form')[0].reset();
             },
             error: function() {
                 $('#form-message')
                     .text('⚠️ Oops, something went wrong. Please try again.')
-                    .css({'color':'#991b1b', 'background-color':'#fee2e2', 'padding':'10px', 'border-radius':'5px'})
+                    .removeClass('none')
+                    .addClass('error')
                     .fadeIn();
             }
         });
